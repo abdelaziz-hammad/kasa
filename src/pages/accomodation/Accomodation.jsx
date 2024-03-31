@@ -1,7 +1,7 @@
 import './accomodation.scss'
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
-import datas from '../../data/data'
+import datas from '../../../public/logements.json';
 import Header from "../../components/header/Header";
 import Slider from "../../components/carousel/Carousel"
 import Footer from "../../components/footer/Footer";
@@ -15,6 +15,17 @@ export default function Accomodation() {
 	const [imageSlider, setImageSlider] = useState([]);
 
 	const { id } = useParams();
+	try {
+		const response = fetch('../../../public/logements.json');
+		if (!response.ok) {
+			throw new Error('Network response was not ok');
+		}
+		const datas = response.json();
+
+
+	} catch (error) {
+		console.error('Error fetching data:', error);
+	}
 	const dataCurrentAccomodation = datas.find(data => data.id === id);
 
 	useEffect(() => {
@@ -42,8 +53,8 @@ export default function Accomodation() {
 						<h1>{dataCurrentAccomodation.title}</h1>
 						<p>{dataCurrentAccomodation.location}</p>
 						<div>
-							{dataCurrentAccomodation.tags.map((tag, index) => 
-								<Tag key={index} tag={tag}/>
+							{dataCurrentAccomodation.tags.map((tag, index) =>
+								<Tag key={index} tag={tag} />
 							)}
 						</div>
 					</div>
@@ -63,10 +74,10 @@ export default function Accomodation() {
 				</div>
 				<div className="accomodation_collapse">
 					<div className="accomodation_collapse_item">
-						<Collapse title={'Description'} content={description}/>
+						<Collapse title={'Description'} content={description} />
 					</div>
 					<div className="accomodation_collapse_item">
-						<Collapse title={'Équipements'} content={equipments}/>
+						<Collapse title={'Équipements'} content={equipments} />
 					</div>
 				</div>
 			</main>
