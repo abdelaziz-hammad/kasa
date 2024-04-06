@@ -2,8 +2,12 @@ import './banner.scss'
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
+/**
+ * Renders a banner component.
+ *
+ * @returns {JSX.Element} The rendered banner component.
+ */
 export default function Banner() {
-
 	const [aboutPage, setAboutPage] = useState(false);
 	const location = useLocation();
 	useEffect(() => {

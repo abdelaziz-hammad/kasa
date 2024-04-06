@@ -6,12 +6,20 @@ import Host from "../components/host/Host";
 import Rate from "../components/rating/Rating";
 import Tag from "../components/tag/Tag";
 
+/**
+ * Renders the details of a listing.
+ * @returns {JSX.Element} The rendered ListingDetails component.
+ */
 export default function ListingDetails() {
     const routeParams = useParams();
     const navigation = useNavigate();
     const [selectedApartment, setSelectedApartment] = useState(null);
 
     useEffect(() => {
+        /**
+         * Fetches the data for the selected apartment.
+         * @throws {Error} If the network response is not ok.
+         */
         const fetchData = async () => {
             try {
                 const response = await fetch('../../public/logements.json');

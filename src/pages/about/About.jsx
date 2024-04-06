@@ -4,8 +4,16 @@ import Banner from '../../components/banner/Banner';
 import Collapse from '../../components/collapse/Collapse';
 import Footer from '../../components/footer/Footer';
 
+/**
+ * Renders the About page component.
+ * @returns {JSX.Element} The About page component.
+ */
 export default function About() {
 
+	/**
+	 * Array of objects containing information about the different sections of the About page.
+	 * @type {Array<Object>}
+	 */
 	const aboutDatas = [
 		{
 			"id": "1",
@@ -37,9 +45,10 @@ export default function About() {
 				{aboutDatas.map(data => {
 					return (
 						<div key={data.id} className="about_main_collapse">
-							<Collapse style={{margin:'30px 0'}}  title={data.title} content={data.content} />
+							<Collapse style={{ margin: '30px 0' }} title={data.title} content={data.content} />
 						</div>
-					)}
+					)
+				}
 				)}
 			</main>
 			<Footer />

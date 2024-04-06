@@ -2,6 +2,11 @@ import './notFound.scss'
 import Header from "../../components/header/Header";
 import { Link } from 'react-router-dom';
 
+/**
+ * Renders the Error page component.
+ * 
+ * @returns {JSX.Element} The rendered NotFound component.
+ */
 export default function NotFound() {
 	return (
 		<div className='notFound'>

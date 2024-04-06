@@ -4,8 +4,12 @@ import Home from './pages/Home/Home';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Error from './pages/notFound/NotFound';
 import About from "./pages/about/About";
-import ListingDetails from "./service/ListingDetails";
 import Accomodation from './pages/accomodation/Accomodation';
+/**
+ * Renders the main application component.
+ *
+ * @returns {JSX.Element} The rendered App component.
+ */
 function App() {
   return (
     <>
@@ -14,7 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/accomodation/:id" element={<Accomodation />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/pages/about/About" element={<About />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </main>

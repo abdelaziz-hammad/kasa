@@ -1,6 +1,13 @@
 import greyStar from '../../assets/grey_star.png';
 import redStar from '../../assets/red_star.png';
 
+/**
+ * Renders a star rating component.
+ *
+ * @component
+ * @param {number} rating - The rating value.
+ * @returns {JSX.Element} The star rating component.
+ */
 export default function Rating({ rating }) {
 
     return (

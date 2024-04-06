@@ -1,6 +1,10 @@
 import './footer.scss'
 import logo from '../../assets/logo_footer.png'
 
+/**
+ * Renders the Footer component.
+ * @returns {JSX.Element} The rendered Footer component.
+ */
 export default function Footer() {
 	return (
 		<footer className='footer'>

@@ -2,6 +2,10 @@ import './header.scss'
 import Logo from '../../assets/logo.png'
 import Navbar from '../navbar/Navbar'
 
+/**
+ * Renders the header component.
+ * @returns {JSX.Element} The rendered header component.
+ */
 export default function Header() {
 	return (
 		<header className='header'>

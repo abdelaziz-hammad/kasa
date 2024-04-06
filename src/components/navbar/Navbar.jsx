@@ -1,9 +1,11 @@
 import './navbar.scss'
 import { Link } from "react-router-dom";
 
+/**
+ * Renders the navigation bar component.
+ * @returns {JSX.Element} The rendered navigation bar.
+ */
 export default function Navbar() {
-
-
     const currentRoute = window.location.pathname;
     return (
         <nav className='nav'>
